@@ -1,10 +1,10 @@
-# Supabase MCP Server
+# Dr. Meowiarti Supabase MCP Server
 
-> Connect your Supabase projects to Cursor, Claude, Windsurf, and other AI assistants.
+> Connect the Dr. Meowiarti universe database to Claude Desktop and other AI assistants. This database contains transcriptions and stories about Dr. Meowiarti and Spy Cat characters.
 
 ![supabase-mcp-demo](https://github.com/user-attachments/assets/3fce101a-b7d4-482f-9182-0be70ed1ad56)
 
-The [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) standardizes how Large Language Models (LLMs) talk to external services like Supabase. It connects AI assistants directly with your Supabase project and allows them to perform tasks like managing tables, fetching config, and querying data. See the [full list of tools](#tools).
+The [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) standardizes how Large Language Models (LLMs) talk to external services like Supabase. This MCP server connects AI assistants directly with the Dr. Meowiarti universe database and allows them to query voice memo transcriptions, search story content, and analyze the Dr. Meowiarti and Spy Cat story universe. See the [full list of tools](#tools).
 
 ## Prerequisites
 
@@ -299,6 +299,55 @@ npm install --ignore-scripts
 
 > [!NOTE]
 > On recent versions of MacOS, you may have trouble installing the `libpg-query` transient dependency without the `--ignore-scripts` flag.
+
+### Local Development Setup
+
+If you want to develop or run the MCP server locally:
+
+1. **Build the project:**
+   ```bash
+   npm run build
+   ```
+
+2. **Configure Claude Desktop for local development:**
+   Edit your `claude_desktop_config.json` file (located at `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+   
+   ```json
+   {
+     "mcpServers": {
+       "meowiarti-database": {
+         "command": "node",
+         "args": [
+           "/path/to/supabase-mcp/packages/mcp-server-supabase/dist/transports/stdio.js"
+         ],
+         "env": {
+           "SUPABASE_ACCESS_TOKEN": "your-personal-access-token",
+           "SUPABASE_URL": "https://your-project-ref.supabase.co",
+           "PROJECT_REF": "your-project-ref"
+         }
+       }
+     }
+   }
+   ```
+
+3. **Test the configuration:**
+   ```bash
+   node test-claude-desktop-config.js
+   ```
+
+4. **Restart Claude Desktop** to load the new configuration.
+
+### Docker Support
+
+For containerized deployment, Docker configuration is also available:
+
+```bash
+# Build the Docker image
+docker build -t supabase-mcp-server .
+
+# Run with docker-compose
+docker-compose up
+```
 
 ## License
 

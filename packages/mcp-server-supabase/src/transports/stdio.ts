@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 
+import { config } from 'dotenv';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { parseArgs } from 'node:util';
 import packageJson from '../../package.json' with { type: 'json' };
 import { createSupabaseApiPlatform } from '../platform/api-platform.js';
 import { createSupabaseMcpServer } from '../server.js';
 import { parseList } from './util.js';
+
+// Load environment variables from .env file
+config();
 
 const { version } = packageJson;
 

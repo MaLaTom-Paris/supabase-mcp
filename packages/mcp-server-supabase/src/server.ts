@@ -99,7 +99,7 @@ export function createSupabaseMcpServer(options: SupabaseMcpServerOptions) {
     .parse(new Set(features ?? DEFAULT_FEATURES));
 
   const server = createMcpServer({
-    name: 'supabase',
+    name: 'meowiarti-database',
     version,
     async onInitialize(info) {
       // Note: in stateless HTTP mode, `onInitialize` will not always be called
