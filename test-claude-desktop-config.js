@@ -40,8 +40,8 @@ versionTest.on('close', (code) => {
     console.log('\n✅ Claude Desktop configuration should work!');
     console.log('\nNext steps:');
     console.log('1. Restart Claude Desktop');
-    console.log('2. Look for "supabase" in the MCP servers list');
-    console.log('3. Test with a simple query like "List my Supabase tables"');
+    console.log('2. Look for "meowiarti-database" in the MCP servers list');
+    console.log('3. Test with a simple query like "List my Dr. Meowiarti story tables"');
   } else {
     console.log('\n❌ Configuration needs debugging');
   }

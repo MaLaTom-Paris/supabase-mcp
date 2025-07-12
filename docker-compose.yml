@@ -1,10 +1,10 @@
 version: '3.8'
 
 services:
-  supabase-mcp:
+  supabase-mcp-meowiarti:
     build: .
-    image: supabase-mcp-server:latest
-    container_name: supabase-mcp-server
+    image: supabase-mcp-meowiarti-server:latest
+    container_name: supabase-mcp-meowiarti-server
     environment:
       - NODE_ENV=production
       - SUPABASE_ACCESS_TOKEN=${SUPABASE_ACCESS_TOKEN}

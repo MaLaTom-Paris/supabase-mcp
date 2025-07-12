@@ -22,7 +22,7 @@ const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz', 20);
 
 export const API_URL = 'https://api.supabase.com';
 export const CONTENT_API_URL = 'https://supabase.com/docs/api/graphql';
-export const MCP_SERVER_NAME = 'supabase-mcp';
+export const MCP_SERVER_NAME = 'supabase-mcp-meowiarti';
 export const MCP_SERVER_VERSION = version;
 export const MCP_CLIENT_NAME = 'test-client';
 export const MCP_CLIENT_VERSION = '1.0.0';

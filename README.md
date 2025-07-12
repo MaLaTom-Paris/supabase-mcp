@@ -318,7 +318,7 @@ If you want to develop or run the MCP server locally:
        "meowiarti-database": {
          "command": "node",
          "args": [
-           "/path/to/supabase-mcp/packages/mcp-server-supabase/dist/transports/stdio.js"
+           "/path/to/supabase-mcp-meowiarti/packages/mcp-server-supabase/dist/transports/stdio.js"
          ],
          "env": {
            "SUPABASE_ACCESS_TOKEN": "your-personal-access-token",
@@ -343,7 +343,7 @@ For containerized deployment, Docker configuration is also available:
 
 ```bash
 # Build the Docker image
-docker build -t supabase-mcp-server .
+docker build -t supabase-mcp-meowiarti-server .
 
 # Run with docker-compose
 docker-compose up

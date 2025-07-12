@@ -78,7 +78,7 @@ export function createSupabaseApiPlatform(
         managementApiUrl,
         accessToken,
         {
-          'User-Agent': `supabase-mcp/${version} (${clientInfo.name}/${clientInfo.version})`,
+          'User-Agent': `supabase-mcp-meowiarti/${version} (${clientInfo.name}/${clientInfo.version})`,
         }
       );
     },
